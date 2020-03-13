@@ -14,11 +14,14 @@ task main()
 		motor[motorB] = 100;
 	}
 	//Cuando se detecta que el touch sensor es diferente de 0 esperar 1s.
-	wait1Msec(1000);
+	//Se paran los motores.
+	motor[motorC] = 0;
+	motor[motorB] = 0;
 	//Luego mover los motores en sentido - durante 2seg.
 	motor[motorC] = -100;
 	motor[motorB] = -100;
 	wait1Msec(2000);
+	//Fin
 
 
 }
