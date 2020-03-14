@@ -1,3 +1,6 @@
+
+
+
 #pragma config(Sensor, S1,     UltraSonido,    sensorEV3_Ultrasonic)
 #pragma config(Sensor, S3,     sencolor,       sensorEV3_Color, modeEV3Color_Color)
 #pragma config(Motor,  motorB,          izquierdo,     tmotorEV3_Large, PIDControl, driveLeft, encoder)
@@ -11,20 +14,20 @@ task main()
 
 	if ((getColorName(S3)== 3)||(getColorName(S3)== 2) || (getColorName(S3)== 5) || (getColorName(S3)== colorBlack)|| (getColorName(S3)== colorBlack))
 	{
-	motor [motorC]=15;
+	motor [motorC]=16;
 	motor [motorB]=0;
 }
 
  else // if ((getColorName(S3)==6) || (getColorName(S1)== 6))
  {
    motor [motorC]=0;
-   motor [motorB]=15;
+   motor [motorB]=16;
  }
  if (SensorValue[UltraSonido]<10)
- {
-   motor [motorC]=0;
- motor [motorB]=0;
-}
+ 	{
+  	 motor [motorC]=0;
+ 		motor [motorB]=0;
+	}
 
 }
 
